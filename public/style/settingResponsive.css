@@ -1,0 +1,142 @@
+@media(max-width:430px){
+    .content{
+        visibility: visible;
+        transform: translateY(0);
+        grid-template-areas: 'content' 'sidebar';
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 60px;
+        overflow: hidden;
+        max-width: 100%;
+        min-height: 100vh;
+    }
+    .content .cover-nav-side{
+        grid-area: sidebar;
+        position: sticky;
+        bottom: 10px;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        min-width: 100%;
+    }
+    .content .navigation-side{
+        position: relative;
+        width: 300px;
+        height: 60px;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 0;
+        overflow: visible;
+        box-shadow: 1px 2px 2px rgba(0,0,0,0.4);
+    }
+    .content .navigation-side ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 300px;
+    }
+    .content .navigation-side ul li{
+        position: relative;
+        width: 60px;
+        height: 60px;
+        z-index: 901;
+    }
+    .content .navigation-side ul li a{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .navigation-side ul li a .icon{
+        position: relative;
+        transition: 0.5s;
+    }
+    .content .navigation-side ul li:hover{
+        background-color: transparent;
+    }
+    .content .navigation-side ul li.active a{
+        /* border-radius: 50%;
+        background-color: #F8EABB; */
+        transition: 0.3s;
+        transform: translateY(-8px);
+        background-color: #97C4B5;
+        top: -25px;
+        border-radius: 50%;
+        border: 6px solid #fff;
+        width: 60px;
+        height: 60px;
+    }
+    .content .navigation-side ul li.active::before{
+        content: '';
+        position: absolute;
+        background-color: #97C4B5;
+        background-color: transparent;
+        width: 20px;
+        height: 20px;
+        left: -14px;
+        /* top: 2px; */
+        z-index: 1;
+        border-top-right-radius: 20px;
+        box-shadow: 0px -10px 0 0 #fff;
+    }
+    .content .navigation-side ul li.active::after{
+        content: '';
+        position: absolute;
+        background-color: #97C4B5;
+        background-color: transparent;
+        width: 20px;
+        height: 20px;
+        right: -15px;
+        top: 0;
+        z-index: 1;
+        border-top-left-radius: 20px;
+        box-shadow: 0px -10px 0 0 #fff;
+    }
+    .content .navigation-side ul li.active .icon{
+        color: #000;
+    }
+
+    .navigation-side ul li:nth-child(1){
+        display: none;
+    }
+    .content .navigation-side ul a.belky{
+        display: none;
+    }
+    .content .navigation-side ul a .tittle,
+    .content .navigation-side ul li form button span.tittle{
+        display: none;
+    }
+
+    .content .navigation-side ul li form button{
+        width: 60px;
+    }
+
+
+
+
+    .content .container-setting{
+        margin-bottom: 35px;
+    }
+    .content .container-setting .cover-ganti-nama .bx-nama,
+    .content .container-setting .cover-hapus-akun .card,
+    .content .container-setting .cover-ganti-password .bx-password{
+        width:90%;
+    }
+    .content .container-setting .cover-ganti-nama .bx-nama .card-footer,
+    .content .container-setting .cover-ganti-password .bx-password .card-footer {
+    margin-left: 0;
+    margin-bottom: 20px;
+    display:flex;
+    justify-content: center;
+
+    }
+
+    .modal .modal-dialog .modal-content{
+        z-index: 100;
+}
+}

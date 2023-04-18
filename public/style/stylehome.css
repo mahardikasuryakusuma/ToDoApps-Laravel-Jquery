@@ -1,0 +1,1255 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+body{
+    overflow-y: hidden;
+}
+::-webkit-scrollbar{
+    width:5px;
+}
+::-webkit-scrollbar-track{
+    background:#999;
+    border-radius:2px;
+}
+::-webkit-scrollbar-thumb{
+    background:#4C7264;
+    border-radius:2px;
+}
+::selection {
+    color: #000;
+    background: #97C4B5;
+}
+.home{
+    background-image: url(../asset/bgHome5.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Lora', serif;
+}
+.home .coverGreeting{
+    backdrop-filter:blur(1px);
+    background-color:rgba(255,255,255,0.1);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    width:50%;
+    height:max-content;
+    box-shadow: 5px 5px 20px rgba(255,255,255,0.1);
+    border-radius:10px
+}
+.home .cover-logout{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    /* padding:10px 10px 10px 20px; */
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:rgba(0,0,0,0.7);
+    border-radius:50% 0 50% 50%;
+    box-shadow: 10px 10px 30px rgba(0,0,0,1)
+}
+.home .cover-logout i{
+    font-size: 20px;
+}
+.home .cover-logout form{
+    width:100%;
+    height:100%;
+    border-radius:50% 0 50% 50%;
+}
+.home .cover-logout form button{
+    display:flex;
+    flex-direction:columns;
+    height:100%;
+    justify-content:space-between;
+    background-color:transparent;
+    color:#fff;
+    border:none;
+    font-weight:800;
+    padding:10px 10px 10px 10px;
+    width:100%;
+    border-radius:50% 0 50% 50%;
+    padding:10px 10px 10px 20px;
+    outline:none;
+    align-items:center;
+}
+
+.home .cover-logout form button:hover{
+    padding: 15px 15px 15px 25px;
+}
+.home .salam h1{
+    font-size: 4em;
+    font-weight: 900;
+    color: #000;
+    text-align: center;
+    font-family:'Urbanist', sans-serif;
+}
+.home .waktu{
+    font-family:'Urbanist', sans-serif;
+    font-size: 7em;
+    font-weight: 1000;
+}
+.home .slider{
+    width: 100px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px 20px 0 0;
+    transition: 1s;
+    cursor: pointer;
+}
+.home .slider:hover{
+    height: 70px;
+
+}
+.home .slider i{
+    font-size: 3em;
+    font-weight: 1000;
+}
+
+/* ======================================================Content==================== */
+table.dataTable tbody th, table.dataTable tbody td {
+    padding: 8px 1px;
+}
+.content{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-color: aliceblue;
+    transition: 0.5s;
+    transform: translateY(100%);
+    top: 0;
+    visibility: hidden;
+    display: grid;
+    grid-template-areas:
+    'sidebar content';
+    grid-template-columns: 60px 1fr;
+}
+.content.active{
+    grid-template-columns: 250px 1fr   ;
+}
+.show{
+    transform: translateY(0);
+    /* display: block; */
+    /* opacity: 1; */
+    visibility: visible;
+    width: 100%;
+}
+.content .navigation-side{
+    grid-area: sidebar;
+    position: absolute;
+    width: 60px;
+    height: 100vh;
+    /* background: #003147; */
+    background-color: #4C7264;
+    transition: 0.5s;
+    overflow:hidden;
+    z-index:800;
+}
+.navigation-side.active{
+    width: 250px;
+}
+.navigation-side ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding:0;
+}
+.navigation-side ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+.navigation-side ul li:hover{
+    background: #97C4B5;
+}
+.navigation-side ul li:nth-child(1){
+    margin-bottom: 20px;
+}
+.navigation-side ul li:nth-child(1):hover{
+    background:transparent;
+}
+.navigation-side ul li form button{
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: none;
+}
+.navigation-side ul li form button span.icon{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 25px;
+}
+.navigation-side ul li form button span.tittle{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+.navigation-side ul li form button:hover span.tittle,
+.navigation-side ul li form button:hover span.icon{
+    color: #000;
+}
+/* .navigation-side ul li a .icon, */
+.navigation-side ul li a{
+    position: relative;
+    display: flex;
+    align-items:center;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    cursor:pointer;
+}
+.navigation-side ul li a .icon-top,
+.navigation-side ul li a .icon{
+    position: relative;
+    display: flex;
+    justify-content:center;
+    min-width: 60px;
+    height: 60px;
+    align-items:center;
+    /* line-height: 60px; */
+    text-align: center;
+    cursor:pointer;
+    color: #fff;
+    font-size: 24px;
+}
+.navigation-side ul li a:hover,
+.navigation-side ul li a:hover .icon{
+    /* color:#F8EABB; */
+    color:#000;
+    /* font-size:18px; */
+}
+.navigation-side ul li a .tittle h2{
+    color:#fff;
+    font-size:24px;
+    font-weight:900;
+    cursor:auto;
+
+}
+.navigation-side ul li a .tittle{
+    position: relative;
+    display: flex;
+    align-items:center;
+    padding: 0 10px;
+    height: 60px;
+    font-weight:700;
+    white-space: nowrap ;
+}
+
+.content #response-add-success,
+.content #response-add-warning{
+    left:50%;
+    top: 10px;
+    transform: translateX(-50%);
+    z-index: 150;
+    width: 30%;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content #response-add-error,
+.content #response-add-error-modal{
+    left:50%;
+    top: 10px;
+    transform: translateX(-50%);
+    z-index: 150;
+    width: 40%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content #response-add-success p,
+.content #response-add-warning p,
+.content #response-add-error p,
+.modal .modal-dialog #response-add-error-modal p,
+.modal .modal-dialog #response-add-error-modal-done p,
+.modal .modal-dialog #response-add-error-modal-deadline p{
+    padding: 0;
+    margin: 0;
+}
+
+/* =============================Content Jadwal================================== */
+.content .cover-content-jadwal{
+    display:grid;
+    grid-area:content;
+    grid-template-areas:
+    'topbar'
+    'contentArea';
+    grid-template-rows: 60px 1fr;
+
+}
+
+.content .cover-content-jadwal .content-container{
+    grid-area: contentArea;
+    display: grid;
+    grid-template-areas:
+    'jadwal deadline';
+    grid-template-columns: 1fr 1.3fr;
+    grid-template-rows: 1fr;
+    width:100%;
+    height: 100%;
+    transition: 0.5s;
+    right:0;
+}
+.content .cover-content-jadwal .content-container.active{
+    width:100%;
+}
+.content .cover-content-jadwal .content-container .jadwal-show{
+    grid-area: jadwal;
+    display: grid;
+    grid-template-areas:
+        'judul'
+        'tanggal'
+        'tampil-jadwal';
+    grid-template-rows: 1fr 1fr 9fr;
+    height: 100vh;
+    background-color: #fff;
+    width:100%;
+}
+
+.content .cover-content-jadwal .content-container .jadwal-show h1{
+    text-align: center;
+    align-self: center;
+    font-size:1.3em;
+    font-weight:900
+}
+.content .cover-content-jadwal .content-container .jadwal-show .tanggal{
+    grid-area: tanggal;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .tanggal .list-hari{
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+    justify-content:space-around;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .tanggal .list-hari .hMinggu,
+.content .cover-content-jadwal .content-container .jadwal-show .tanggal .list-hari .hSenin,
+.content .cover-content-jadwal .content-container .jadwal-show .tanggal .list-hari .hSelasa,
+.content .cover-content-jadwal .content-container .jadwal-show .tanggal .list-hari .hRabu,
+.content .cover-content-jadwal .content-container .jadwal-show .tanggal .list-hari .hKamis,
+.content .cover-content-jadwal .content-container .jadwal-show .tanggal .list-hari .hJumat,
+.content .cover-content-jadwal .content-container .jadwal-show .tanggal .list-hari .hSabtu{
+    background-color: #fff;
+    /* box-shadow: 1px 1px 1px #aaa; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight:600;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .tanggal .list-hari .aktif{
+    background-color: #fff;
+    box-shadow: 1px 1px 1px 1px #aaa;
+    transition: 0.1s;
+    transform: scale(1.15);
+    font-weight:700;
+    color: #4C7264;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .tanggal .list-hari ul{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+    margin-right:20px
+}
+.content .cover-content-jadwal .content-container .jadwal-show .tanggal .list-hari ul li{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 60px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-senin,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-selasa,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-rabu,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-kamis,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-jumat,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-sabtu{
+    margin-left: 10px;
+    grid-area: tampil-jadwal;
+    margin-right: 10px;
+    display: none;
+    overflow:auto;
+    margin-bottom: 50px;
+    position: relative;
+    /* width:100%; */
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .container-head-jadwal,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-senin .container-head-jadwal,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-selasa .container-head-jadwal,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-rabu .container-head-jadwal,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-kamis .container-head-jadwal,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-jumat .container-head-jadwal,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-sabtu .container-head-jadwal
+{
+    position:sticky;
+    top:0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index:1;
+    background-color:#fff;
+    /* width:50%; */
+    /* grid-area: head; */
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .container-head-jadwal .cover-button-add-schedule,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-senin .container-head-jadwal .cover-button-add-schedule,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-selasa .container-head-jadwal .cover-button-add-schedule,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-rabu .container-head-jadwal .cover-button-add-schedule,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-kamis .container-head-jadwal .cover-button-add-schedule,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-jumat .container-head-jadwal .cover-button-add-schedule,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-sabtu .container-head-jadwal .cover-button-add-schedule
+{
+    margin-right:10px;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .container-head-jadwal p,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-senin .container-head-jadwal p,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-selasa .container-head-jadwal p,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-rabu .container-head-jadwal p,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-kamis .container-head-jadwal p,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-jumat .container-head-jadwal p,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-sabtu .container-head-jadwal p
+{
+    font-weight:800;
+    font-size:18px;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-senin table,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-selasa table,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-rabu table,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-kamis table,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-jumat table,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-sabtu table,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .dropdownContent{
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 170px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    right: 0;
+    display: none;
+    border-radius: 5px;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .show{
+    display: flex;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .dropdownContent button{
+    margin: 10px 0;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .dropdownContent .delete-sunday:hover{
+    cursor: pointer;
+    color: red;
+}
+
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .dropdownBtn{
+    font-size: 16px;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .td_hidden{
+    display: none;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .dropdownBtn:hover{
+    cursor: pointer;
+    color: #bf00ff;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .tittle-add-sunday:hover,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-senin .tittle-add-monday:hover,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-selasa .tittle-add-tuesday:hover,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-rabu .tittle-add-tuesday:hover,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-kamis .tittle-add-tuesday:hover,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-jumat .tittle-add-tuesday:hover,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-sabtu .tittle-add-tuesday:hover
+{
+    color: green;
+    cursor: pointer;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .batal-hapus{
+    width: 110px;
+    height: 30px;
+    background-color: #888;
+    border: 1px solid black;
+    font-size: 14px;
+    margin-top: 10px;
+    border-radius: 5px;
+    right: 0;
+    display: none;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .hapus-sunday{
+    width: 110px;
+    height: 30px;
+    background-color: #888;
+    border: 1px solid black;
+    font-size: 14px;
+    margin-top: 10px;
+    border-radius: 5px;
+    right: 0;
+    position: absolute;
+    display: none;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .inputcheckdel{
+    display: none;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .tampilkan{
+    display: block;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .hapus-sunday:hover{
+    cursor: pointer;
+    background-color: #fff;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .waktu-jadwal{
+    width: 25%;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .jadwal-jadwal{
+    width: 60%;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .fas{
+    cursor: pointer;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .fa-edit:hover{
+    color: rgb(0, 0, 255);
+}
+.content .cover-content-jadwal .content-container .jadwal-show .fa-trash-alt:hover{
+    color: rgb(255, 0, 0);
+}
+.content .cover-content-jadwal .content-container .jadwal-show a{
+    text-decoration: none;
+    color: #000;
+}
+.content .cover-content-jadwal .content-container .jadwal-show button{
+    background-color: transparent;
+    border: none;
+    color:#000;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-senin  .dataTables_wrapper .dataTable tbody tr td.dataTables_empty,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-selasa  .dataTables_wrapper .dataTable tbody tr td.dataTables_empty,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-rabu  .dataTables_wrapper .dataTable tbody tr td.dataTables_empty,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-kamis  .dataTables_wrapper .dataTable tbody tr td.dataTables_empty,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-jumat  .dataTables_wrapper .dataTable tbody tr td.dataTables_empty,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-sabtu  .dataTables_wrapper .dataTable tbody tr td.dataTables_empty,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .dataTables_wrapper .dataTable tbody tr td.dataTables_empty {
+    text-align:center;
+    border-bottom:1px solid #000;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-senin  .dataTables_wrapper .dataTable tbody tr td,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-selasa  .dataTables_wrapper .dataTable tbody tr td,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-rabu  .dataTables_wrapper .dataTable tbody tr td,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-kamis  .dataTables_wrapper .dataTable tbody tr td,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-jumat  .dataTables_wrapper .dataTable tbody tr td,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-sabtu  .dataTables_wrapper .dataTable tbody tr td,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .dataTables_wrapper .dataTable tbody tr td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #000;
+}
+
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-senin #tambah_senin #cover-input-senin table tbody tr,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-selasa #tambah_selasa #cover-input-selasa table tbody tr,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-rabu #tambah_rabu #cover-input-rabu table tbody tr,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-kamis #tambah_kamis #cover-input-kamis table tbody tr,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-jumat #tambah_jumat #cover-input-jumat table tbody tr,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-sabtu #tambah_sabtu #cover-input-sabtu table tbody tr,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu #tambah_minggu #cover-input-minggu table tbody tr{
+    /* background-color:#F7F7; */
+    height:40px;
+    border-bottom:1px solid #000
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-senin #tambah_senin #cover-input-senin table tbody tr td.delete-input,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-selasa #tambah_selasa #cover-input-selasa table tbody tr td.delete-input,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-rabu #tambah_rabu #cover-input-rabu table tbody tr td.delete-input,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-kamis #tambah_kamis #cover-input-kamis table tbody tr td.delete-input,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-jumat #tambah_jumat #cover-input-jumat table tbody tr td.delete-input,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-sabtu #tambah_sabtu #cover-input-sabtu table tbody tr td.delete-input,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu #tambah_minggu #cover-input-minggu table tbody tr td.delete-input{
+    text-align:center;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-senin #tambah_senin #cover-input-senin table tbody tr td input#waktu,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-selasa #tambah_selasa #cover-input-selasa table tbody tr td input#waktu,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-rabu #tambah_rabu #cover-input-rabu table tbody tr td input#waktu,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-kamis #tambah_kamis #cover-input-kamis table tbody tr td input#waktu,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-jumat #tambah_jumat #cover-input-jumat table tbody tr td input#waktu,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-sabtu #tambah_sabtu #cover-input-sabtu table tbody tr td input#waktu,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu #tambah_minggu #cover-input-minggu table tbody tr td input#waktu{
+    margin-left:10px;
+    min-width:50%;
+    border: 1px solid #4C7264;
+    border-radius:5px;
+    outline:none;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-senin #tambah_senin #cover-input-senin table tbody tr td input#waktu:focus,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-selasa #tambah_selasa #cover-input-selasa table tbody tr td input#waktu:focus,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-rabu #tambah_rabu #cover-input-rabu table tbody tr td input#waktu:focus,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-kamis #tambah_kamis #cover-input-kamis table tbody tr td input#waktu:focus,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-jumat #tambah_jumat #cover-input-jumat table tbody tr td input#waktu:focus,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-sabtu #tambah_sabtu #cover-input-sabtu table tbody tr td input#waktu:focus,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu #tambah_minggu #cover-input-minggu table tbody tr td input#waktu:focus{
+    /* border:2px solid #4C7264; */
+    outline:2px solid #4C7264;
+    outline-offset: 2px;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-senin #tambah_senin #cover-input-senin table tbody tr td input#jadwal,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-selasa #tambah_selasa #cover-input-selasa table tbody tr td input#jadwal,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-rabu #tambah_rabu #cover-input-rabu table tbody tr td input#jadwal,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-kamis #tambah_kamis #cover-input-kamis table tbody tr td input#jadwal,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-jumat #tambah_jumat #cover-input-jumat table tbody tr td input#jadwal,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-sabtu #tambah_sabtu #cover-input-sabtu table tbody tr td input#jadwal,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu #tambah_minggu #cover-input-minggu table tbody tr td input#jadwal{
+    width: 100%;
+    border: 1px solid #4C7264;
+    border-radius:5px;
+    caret-color: #4C7264;
+    padding:0 5px;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-senin #tambah_senin #cover-input-senin table tbody tr td input#jadwal:focus,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-selasa #tambah_selasa #cover-input-selasa table tbody tr td input#jadwal:focus,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-rabu #tambah_rabu #cover-input-rabu table tbody tr td input#jadwal:focus,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-kamis #tambah_kamis #cover-input-kamis table tbody tr td input#jadwal:focus,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-jumat #tambah_jumat #cover-input-jumat table tbody tr td input#jadwal:focus,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-sabtu #tambah_sabtu #cover-input-sabtu table tbody tr td input#jadwal:focus,
+.content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu #tambah_minggu #cover-input-minggu table tbody tr td input#jadwal:focus{
+    outline:2px solid #4C7264;
+    outline-offset: 2px;
+}
+.content .cover-content-jadwal .content-container .jadwal-show th.head-jadwal{
+    text-align:end;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .head-jadwal a{
+    cursor: pointer;
+}
+.content .cover-content-jadwal .content-container .jadwal-show .head-jadwal a:hover{
+    color: rgb(0,255, 0);
+}
+/* .content .content-container .jadwal-show th, td{
+} */
+.content .cover-content-jadwal .content-container .jadwal-show .tampil{
+    display: block;
+}
+.content .jadwal{
+    margin-left: 60px;
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+}
+.content .jadwal .jadwal_senin,
+.content .jadwal .jadwal_selasa,
+.content .jadwal .jadwal_rabu,
+.content .jadwal .jadwal_kamis,
+.content .jadwal .jadwal_jumat,
+.content .jadwal .jadwal_sabtu,
+.content .jadwal .jadwal_minggu
+{
+    position: absolute;
+    transform: translateY(100%);
+    transition: 1s;
+    background-color: antiquewhite;
+}
+.content .jadwal .show-add{
+    transform: translateY(-200%);
+}
+
+
+
+
+
+.content .cover-content-jadwal .topbar{
+    grid-area: topbar;
+    display: grid;
+    grid-template-areas:
+        'greeting  tanggal';
+    grid-template-columns: 1fr 1fr;
+    background-color:#fff;
+}
+.content .cover-content-jadwal .topbar .call-bx .greeting-second{
+    display: none;
+}
+.content .cover-content-jadwal .topbar .call-bx h4{
+    font-size:18px;
+    font-weight:800;
+}
+.content .cover-content-jadwal .topbar .call-bx{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    grid-area: greeting;
+    margin-left: 20px;
+}
+.content .cover-content-jadwal .topbar .date h4{
+    font-size:18px;
+    font-weight:800;
+}
+.content .cover-content-jadwal .topbar .date{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+    grid-area: tanggal;
+}
+
+.data-table{
+    width:100%;
+}
+#content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .dataTables_wrapper .row{
+    width:100%;
+}
+/* #DataTables_Table_0_length label{
+    display:grid;
+    grid-template-areas: 'label','select';
+} */
+/* #DataTables_Table_0_length label select{
+    grid-area: select;
+} */
+button#saveBtn,
+button#saveBtnSenin,
+button#saveBtnSelasa,
+button#saveBtnRabu,
+button#saveBtnKamis,
+button#saveBtnJumat,
+button#saveBtnSabtu,
+button#saveBtnMinggu
+{
+    background-color: #4C7264;
+    padding: 4px 10px;
+    color: #F8EABB;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+button#saveBtn:hover,
+button#saveBtnSenin:hover,
+button#saveBtnSelasa:hover,
+button#saveBtnRabu:hover,
+button#saveBtnKamis:hover,
+button#saveBtnJumat:hover,
+button#saveBtnSabtu:hover,
+button#saveBtnMinggu:hover{
+    cursor:pointer;
+}
+#cover-button-minggu,
+#cover-button-senin,
+#cover-button-selasa,
+#cover-button-rabu,
+#cover-button-kamis,
+#cover-button-jumat,
+#cover-button-sabtu,
+#cover-button-minggu{
+    /* margin-top:10px; */
+    /* margin-right: 10px; */
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+p#errorInput,
+p#errorInputSenin,
+p#errorInputSelasa,
+p#errorInputRabu,
+p#errorInputKamis,
+p#errorInputJumat,
+p#errorInputSabtu
+{
+    margin-top:5px;
+    /* display:flex;
+    align-items:center; */
+    color:red;
+    font-weight:800;
+}
+
+/* Bagian Tabel Control */
+td.sorting_1{
+    width:10%;
+}
+#content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .dataTables_wrapper .data-table-minggu tbody .odd td:nth-child(2),
+#content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-senin .dataTables_wrapper .data-table-senin tbody .odd td:nth-child(2),
+#content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-selasa .dataTables_wrapper .data-table-selasa tbody .odd td:nth-child(2),
+#content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-rabu .dataTables_wrapper .data-table-rabu tbody .odd td:nth-child(2),
+#content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-kamis .dataTables_wrapper .data-table-kamis tbody .odd td:nth-child(2),
+#content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-jumat .dataTables_wrapper .data-table-jumat tbody .odd td:nth-child(2),
+#content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-sabtu .dataTables_wrapper .data-table-sabtu tbody .odd td:nth-child(2)
+{
+    /* background-color:red; */
+    width:70%
+}
+#content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-minggu .dataTables_wrapper .data-table-minggu tbody .odd td:nth-child(3),
+#content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-senin .dataTables_wrapper .data-table-senin tbody .odd td:nth-child(3),
+#content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-selasa .dataTables_wrapper .data-table-selasa tbody .odd td:nth-child(3),
+#content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-rabu .dataTables_wrapper .data-table-rabu tbody .odd td:nth-child(3),
+#content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-kamis .dataTables_wrapper .data-table-kamis tbody .odd td:nth-child(3),
+#content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-jumat .dataTables_wrapper .data-table-jumat tbody .odd td:nth-child(3),
+#content .cover-content-jadwal .content-container .jadwal-show .show-jadwal-sabtu .dataTables_wrapper .data-table-sabtu tbody .odd td:nth-child(3){
+    /* background-color:blue; */
+    min-width:90px;
+}
+i.fa-circle-xmark:hover{
+    cursor:pointer;
+}
+/* akhir bagian tabel kontrol */
+
+.content .cover-content-jadwal .content-container .tugas{
+    grid-area:deadline;
+    display:grid;
+    grid-template-areas: "judul" "tugas";
+    grid-template-rows:  80px 1fr;
+    max-width:100%;
+    max-height:100vh;
+    overflow:hidden;
+}
+.content .cover-content-jadwal .content-container .tugas .new-cover{
+    grid-area: tugas;
+    overflow: auto;
+    display: grid;
+    grid-template-areas: 'jadwalShow' 'chart';
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+}
+.content .cover-content-jadwal .content-container .tugas .container-task{
+    background-color:#fff;
+    grid-area: jadwalShow;
+}
+.content .cover-content-jadwal .content-container .tugas .coverTittle .cover-button{
+    width:100%;
+    display:flex;
+    justify-content:flex-end;
+}
+.content .cover-content-jadwal .content-container .tugas .coverTittle h1{
+    width:100%;
+    text-align:center;
+    font-size:1.3em;
+    font-weight:900;
+}
+.coverTittle{
+    /* position: sticky;
+    position: -webkit-sticky; */
+    grid-area: judul;
+    top:0;
+    z-index:99;
+    background-color:#fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    /* margin-top: 7px; */
+}
+.content .cover-content-jadwal .content-container .tugas .coverTittle .cover-button button{
+    background-color:transparent;
+    border:none;
+    margin-right:20px;
+    color: #000;
+}
+.content .cover-content-jadwal .content-container .tugas .coverTittle .cover-button button:hover{
+    color:green;
+}
+.content .cover-content-jadwal .content-container .tugas .container-chart{
+    grid-area:chart;
+    width:100%;
+    height:100%;
+    background-color:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .cover-content-jadwal .content-container .tugas .container-chart #pie_basic{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    width:80%;
+    height: 80%;
+    margin-bottom:70px;
+}
+
+
+
+.timer-tugas{
+    display:flex;
+    justify-content:space-between;
+}
+.dropdown-menu.show{
+    display:flex;
+    flex-direction:column;
+    min-width:100px;
+    padding:0;
+    box-shadow:2px 2px 2px #D3D3D3;
+    position:absolute;
+    z-index:9000;
+    top:0;
+}
+.dropdown{
+    height:100px;
+}
+.btn.dropdown-toggle{
+    transition:0.2s;
+}
+.btn.dropdown-toggle.show{
+    transform:rotate(-180deg);
+    transition:0.2s;
+}
+.dropdown-menu.show a{
+    width:100%;
+}
+.dropdown-menu.show a:hover{
+    background-color:#D3D3D3;
+}
+.btn.dropdown-toggle{
+    padding:0;
+    margin:0;
+    border:none;
+
+}
+.btn.dropdown-toggle::after{
+    font-size:22px;
+    display:none;
+}
+
+
+
+#accordionFlushExample{
+    margin:5px 10px 0 0;
+}
+#accordionFlushExample .accordion-item{
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    margin: 0 0 10px 0px;
+    position: relative;
+    outline:none;
+}
+
+#accordionFlushExample .accordion-item.sukses:before{
+    content: "";
+    width: 4px;
+    height: 100%;
+    /* background: linear-gradient(to bottom, #688e26 0%,#ff816a 100%); */
+    background-color:#4C7264;
+    position: absolute;
+    top: 0;
+    left: -4px;
+}
+#accordionFlushExample .accordion-item.berjalan:before{
+    content: "";
+    width: 4px;
+    height: 100%;
+    /* background: linear-gradient(to bottom, #688e26 0%,#ff816a 100%); */
+    background-color:#F8EABB;
+    position: absolute;
+    top: 0;
+    left: -4px;
+}
+#accordionFlushExample .accordion-item.kadaluarsa:before{
+    content: "";
+    width: 4px;
+    height: 100%;
+    /* background: linear-gradient(to bottom, #688e26 0%,#ff816a 100%); */
+    background-color:#F4922F;
+    position: absolute;
+    top: 0;
+    left: -4px;
+}
+
+.accordion-button.berjalan{
+    color:#9a8b5b;
+    font-size:16px;
+    font-weight:800;
+}
+.accordion-button.sukses{
+    color:#4C7264;
+    font-size:16px;
+    font-weight:800;
+}
+.accordion-button.kadaluarsa{
+    color:#F4922F;
+    font-size:16px;
+    font-weight:800;
+}
+.accordion-button.sukses:focus {
+    color:#4C7264;
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+    background-color: rgba(151,196,181,0.5)
+}
+.accordion-button.kadaluarsa:focus {
+    color:#F4922F;
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+    background-color: rgba(244,146,47,0.2)
+}
+.accordion-button.berjalan:focus {
+    color:#9a8b5b;
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+    background-color: rgba(248,234,187,0.5)
+}
+.accordion-button.sukses:not(.collapsed){
+    color:#4C7264;
+    background-color: rgba(151,196,181,0.5)
+}
+.accordion-button.kadaluarsa:not(.collapsed){
+    color:#F4922F;
+    background-color: rgba(244,146,47,0.2)
+}
+.accordion-button.berjalan:not(.collapsed){
+    color:#9a8b5b;
+    background-color: rgba(248,234,187,0.5)
+}
+.accordion-button:not(.collapsed)::after{
+    background-image:var(--bs-accordion-btn-icon);
+}
+
+/* =====================-------------------------------------------------------------- */
+/* .cover-accordion-task{
+    overflow:auto;
+    position:relative;
+} */
+#accordionFlushExample .accordion-item.deadline,
+#accordionFlushExample .accordion-item.berhasil,
+#accordionFlushExample .accordion-item.on-going{
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    margin: 0 0 10px 20px;
+    position: relative;
+    outline:none;
+}
+
+#accordionFlushExample .accordion-item.on-going:before{
+    content: "";
+    width: 4px;
+    height: 100%;
+    background-color:#F8EABB;
+    position: absolute;
+    top: 0;
+    left: -4px;
+}
+#accordionFlushExample .accordion-item.deadline:before{
+    content: "";
+    width: 4px;
+    height: 100%;
+    background-color:#F4922F;
+    position: absolute;
+    top: 0;
+    left: -4px;
+}
+#accordionFlushExample .accordion-item.berhasil:before{
+    content: "";
+    width: 4px;
+    height: 100%;
+    background-color:#4C7264;
+    position: absolute;
+    top: 0;
+    left: -4px;
+}
+
+.accordion-button.on-going{
+    color:#9a8b5b;
+    font-size:16px;
+    font-weight:800;
+}
+.accordion-button.deadline{
+    color:#F4922F;
+    font-size:16px;
+    font-weight:800;
+}
+.accordion-button.berhasil{
+    color:#4C7264;
+    font-size:16px;
+    font-weight:800;
+}
+.accordion-button.on-going:focus {
+    color:#9a8b5b;
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+    background-color: rgba(248,234,187,0.5)
+}
+.accordion-button.berhasil:focus {
+    color:#4C7264;
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+    background-color: rgba(151,196,181,0.5)
+}
+.accordion-button.deadline:focus {
+    color:#F4922F;
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+    background-color: rgba(244,146,47,0.2)
+}
+.accordion-button.berhasil:not(.collapsed){
+    color:#4C7264;
+    background-color: rgba(151,196,181,0.5)
+}
+.accordion-button.on-going:not(.collapsed){
+    color:#9a8b5b;
+    background-color: rgba(248,234,187,0.5)
+}
+.accordion-button.deadline:not(.collapsed){
+    color:#F4922F;
+    background-color: rgba(244,146,47,0.2)
+}
+/* .accordion-button:not(.collapsed)::after{
+    background-image:var(--bs-accordion-btn-icon);
+} */
+div.cover-timer,
+table.tabel-time-accor,
+table.tabel-time-accor tbody,
+table.tabel-time-accor tbody tr{
+    width:100%
+}
+
+
+.content .cover-content-jadwal .content-container .tugas .container-task .accordion .accordion-item .accordion-collapse .accordion-body .dataTables_wrapper .dataTable tbbody tr.odd td{
+    border:none;
+}
+
+.coverHeadAccor{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    margin-right:10px;
+}
+
+.child1{
+    font-weight:800;
+    font-size:15px;
+    vertical-align:top;
+    width:20%;
+}
+.child2{
+    width:20px;
+    text-align:center;
+    vertical-align:top;
+    width:5%;
+}
+.child3{
+    font-size:14px;
+    font-weight:700;
+    vertical-align:top;
+    width:75%;
+}
+.childDesc{
+    font-size:15px;
+    font-weight:600;
+    overflow-wrap: anywhere;
+    width:75%
+}
+
+
+/* ---------------------------------------------------------------------modal schedule*/
+.modal-open .modal.schedule .modal-dialog{
+    width:385px;
+}
+/* .modal-open .modal.schedule .modal-dialog .modal-content .modal-header{
+    background-color:#97C4B5;
+} */
+.modal-open .modal.schedule .modal-dialog .modal-content .modal-header h4{
+    font-weight:800;
+}
+.modal-open .modal.schedule .modal-dialog .modal-content .modal-body .form-horizontal .form-group input{
+    border:1px solid #4C7264;
+    margin:5px 0;
+
+}
+.modal-open .modal.schedule .modal-dialog .modal-content .modal-body .form-horizontal .form-group input:focus{
+    border:1px solid #4C7264;
+    box-shadow:none;
+    outline-offset:2px;
+    outline:2px solid #4C7264
+}
+.modal-open .modal.schedule .modal-dialog .modal-content .modal-body .form-horizontal .form-group label{
+    font-weight:700
+}
+.modal-open .modal.schedule .modal-dialog .modal-content .modal-body .form-horizontal button{
+    background:#4C7264;
+    color:#fff;
+    outline:none;
+    border:none;
+}
+.modal-open .modal.schedule .modal-dialog .modal-content .modal-body .form-horizontal button:active{
+    outline:2px solid #F8EABB;
+    color: #F8EABB
+}
+/*-------------------------------------------------------------------------------- end modal schedule */
+
+
+/*--------------------------------------------------------------------------------------- modal task */
+
+.modal-open .modal.task .modal-dialog .modal-content .modal-header h4{
+    font-weight:800;
+}
+.modal-open .modal.task .modal-dialog .modal-content .modal-body .form-horizontal .form-group textarea{
+    border:1px solid #4C7264;
+    margin:5px 0;
+    height:80px;
+    resize:none;
+}
+.modal-open .modal.task .modal-dialog .modal-content .modal-body .form-horizontal .form-group input{
+    border:1px solid #4C7264;
+    margin:5px 0;
+
+}
+.modal-open .modal.task .modal-dialog .modal-content .modal-body .form-horizontal .form-group textarea:focus,
+.modal-open .modal.task .modal-dialog .modal-content .modal-body .form-horizontal .form-group input:focus{
+    border:1px solid #4C7264;
+    box-shadow:none;
+    outline-offset:2px;
+    outline:2px solid #4C7264
+}
+.modal-open .modal.task .modal-dialog .modal-content .modal-body .form-horizontal .form-group label{
+    font-weight:700
+}
+.modal-open .modal.task .modal-dialog .modal-content .modal-body .form-horizontal button{
+    background:#4C7264;
+    color:#fff;
+    outline:none;
+    border:none;
+}
+.modal-open .modal.task .modal-dialog .modal-content .modal-body .form-horizontal button:active{
+    outline:2px solid #F8EABB;
+    color: #F8EABB
+}
+
+
+#taskRes{
+    display:none;
+}

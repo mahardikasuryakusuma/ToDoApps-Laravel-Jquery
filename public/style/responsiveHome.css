@@ -1,0 +1,337 @@
+
+@media(max-width:430px){
+     body{
+        background-color:#fff;
+    } 
+    .home{
+        display: none;
+    }
+    .dropdown-menu.show {
+        display: flex;
+        flex-direction: column;
+        min-width: 150px;
+        padding: 0;
+        box-shadow: 2px 2px 2px #D3D3D3;
+        position: absolute;
+        z-index: 9000;
+        top: 0;
+        height: 150px;
+    }
+    .dropdown-menu.show a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        padding-left: 20px;
+        align-items: center;
+        font-size: 18px;
+        padding-left: 27px;
+    }
+    .dropdown-menu.show a i{
+        padding: 10px;
+    }
+    
+    .content .cover-content-jadwal .content-container .jadwal-show .waktu-jadwal{
+        width:70px;
+        height:50px;
+        background-color:#fff;
+        color:#000;
+    }
+    .content .cover-content-jadwal .content-container .jadwal-show .jadwal-jadwal {
+        width: 80%;
+        height:50px;
+    }
+    .content .cover-content-jadwal .content-container .jadwal-show .waktu-jadwal input,
+    .content .cover-content-jadwal .content-container .jadwal-show .jadwal-jadwal input {
+        height:75%;
+    }
+    .content .cover-content-jadwal .content-container .jadwal-show form table tbody tr td{
+        padding: 0 10px;
+    }
+    .content{
+        visibility: visible;
+        transform: translateY(0);
+        grid-template-areas: 'content' 'sidebar';
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 100px;
+        /* display: flex;
+        flex-direction: column;
+        /* display: grid;
+        grid-template-areas: 'content' 'sidebar';
+        grid-template-columns: 1fr; */
+        overflow: hidden;
+        background-color:#fff;
+        width: 100%;
+        height: 100vh;
+    }
+    .content .cover-nav-side{
+        grid-area: sidebar;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 20px;
+        z-index: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        min-width: 100%;
+        background: transparent;
+    }
+    .content .cover-content-jadwal{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 1fr;
+        /*background:url('/asset/bgres.webp');*/
+        /*background-size:cover;*/
+        background-color:#fff;
+        height: 100%;
+        grid-area: content;
+        overflow: hidden;
+    }
+    .content .navigation-side{
+        position: relative;
+        width: 300px;
+        height: 60px;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 0;
+        overflow: visible;
+        box-shadow: 1px 2px 2px rgba(0,0,0,0.4);
+    }
+    .content .navigation-side ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 300px;
+    }
+    .content .navigation-side ul li{
+        position: relative;
+        width: 60px;
+        height: 60px;
+        z-index: 901;
+    }
+    .content .navigation-side ul li a{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .navigation-side ul li a .icon{
+        position: relative;
+        transition: 0.5s;
+    }
+    .content .navigation-side ul li:hover{
+        background-color: transparent;
+    }
+    .content .navigation-side ul li.active a{
+        /* border-radius: 50%;
+        background-color: #F8EABB; */
+        transition: 0.3s;
+        transform: translateY(-8px);
+        background-color: #97C4B5;
+        top: -25px;
+        border-radius: 50%;
+        border: 6px solid #fff;
+        width: 60px;
+        height: 60px;
+    }
+    .content .navigation-side ul li.active::before{
+        content: '';
+        position: absolute;
+        background-color: #97C4B5;
+        background-color: transparent;
+        width: 20px;
+        height: 20px;
+        left: -14px;
+        /* top: 2px; */
+        z-index: 1;
+        border-top-right-radius: 20px;
+        box-shadow: 0px -10px 0 0 #fff;
+    }
+    .content .navigation-side ul li.active::after{
+        content: '';
+        position: absolute;
+        background-color: #97C4B5;
+        background-color: transparent;
+        width: 20px;
+        height: 20px;
+        right: -15px;
+        top: 0;
+        z-index: 1;
+        border-top-left-radius: 20px;
+        box-shadow: 0px -10px 0 0 #fff;
+    }
+    .content .navigation-side ul li.active .icon{
+        color: #000;
+    }
+
+    .navigation-side ul li:nth-child(1){
+        display: none;
+    }
+    .content .navigation-side ul a.belky{
+        display: none;
+    }
+    .content .navigation-side ul a .tittle,
+    .content .navigation-side ul li form button span.tittle{
+        display: none;
+    }
+
+    .content .navigation-side ul li form button{
+        width: 60px;
+    }
+
+    .content .cover-content-jadwal .content-container{
+        grid-template-areas: 'jadwal';
+        grid-template-columns: 1fr;
+        overflow: hidden;
+    }
+    .content .cover-content-jadwal .content-container .jadwal-show.active {
+        display: grid;
+    }
+    .content .cover-content-jadwal .content-container .jadwal-show .tanggal .list-hari ul{
+        margin: 0 10px;
+        padding-left: 0;
+    }
+    .content .cover-content-jadwal .topbar{
+        display: flex;
+        flex-direction: column;
+        /* background-color: #97C4B5; */
+        background-color: rgba(151, 196, 181, 1);
+        height: 100%;
+        justify-content: center;
+        width: 70%;
+        border-radius: 0px 0  50px 0;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    }
+    .content .cover-content-jadwal .topbar .call-bx .greeting-second{
+        display: block;
+    }
+    .content .cover-content-jadwal .topbar .call-bx .greeting-first{
+        display: none;
+    }
+    .content .cover-content-jadwal .topbar .call-bx h4{
+        font-size: 24px;
+    }
+    .content .cover-content-jadwal .topbar .date{
+        justify-content: flex-start;
+        margin-left: 20px;
+    }
+    .content .cover-content-jadwal .topbar .date h4{
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .content .cover-content-jadwal .content-container{
+        grid-template-columns: 1fr;
+    }
+    .content .cover-content-jadwal .content-container .jadwal-show .tanggal .list-hari ul li{
+        width: 45px;
+        height: 50px;
+    }
+    .content .cover-content-jadwal .content-container .jadwal-show .tanggal .list-hari .aktif{
+        background-color: #4C7264;
+        background-color: #97C4B5;
+        background-color: rgba(76, 114, 100, 1);
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+        height: 45px;
+        color: #F8EABB;
+    }
+    .content .cover-content-jadwal .content-container .jadwal-show .tampil{
+        margin-bottom: 200px;
+        z-index: 10;
+    }
+
+
+
+
+    .content .cover-content-jadwal .content-container .jadwal-show.active{
+        transform: translateX(0);
+        width: 100%;
+        height: 100%;
+    }
+    .content .cover-content-jadwal .content-container .jadwal-show{
+        position: absolute;
+        left: 0;
+        transform: translateX(-100%);
+        grid-area: jadwal;
+        transition: 0.5s;
+        width: 100%;
+        height: 100%;
+    }
+    .content .cover-content-jadwal .content-container .tugas.active{
+        transform: translateX(0);
+        width: 100%;
+        height: 100%;
+        /* margin-bottom: 90px; */
+    }
+     .content .cover-content-jadwal .content-container .tugas .new-cover{
+        display:flex;
+        flex-direction:column;
+    } 
+    .content .cover-content-jadwal .content-container .tugas{
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        transform: translateX(100%);
+        grid-area: jadwal;
+        transition: 0.5s;
+        width: 100%;
+        height: 100%;
+    }
+    .content .cover-content-jadwal .content-container .tugas.active .container-task .coverTittle{
+        margin-top: 20px;
+    }
+    .content .cover-content-jadwal .content-container .tugas .container-chart{
+        height:70%;
+        margin-bottom:200px;
+    }
+    .content .cover-content-jadwal .content-container .tugas .container-chart #pie_basic{
+        /* margin-bottom: 200px; */
+        width: 100%;
+        height: 330px;
+    }
+    .modal-open .modal.schedule .modal-dialog{
+        width: 95%;
+    }
+    #taskRes{
+        display:block;
+    }
+
+    .content #response-add-success,
+    .content #response-add-warning{
+        left:50%;
+        top: 10px;
+        transform: translateX(-50%);
+        z-index: 10;
+        width: 90%;
+        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .content #response-add-error,
+    .content #response-add-error-modal{
+        left:50%;
+        top: 10px;
+        transform: translateX(-50%);
+        z-index: 10;
+        width: 90%;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .content #response-add-success p,
+    .content #response-add-warning p,
+    .content #response-add-error p,
+    .modal .modal-dialog #response-add-error-modal p,
+    .modal .modal-dialog #response-add-error-modal-done p,
+    .modal .modal-dialog #response-add-error-modal-deadline p{
+        padding: 0;
+        margin: 0;
+    }
+
+}

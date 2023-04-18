@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+.content{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background-color: aliceblue;
+    top: 0;
+    display: grid;
+    grid-template-areas:
+    'sidebar content';
+    grid-template-columns: 60px 1fr;
+}
+.content.active{
+    grid-template-columns: 250px 1fr   ;
+}
+.content .navigation-side{
+    grid-area: sidebar;
+    position: fixed;
+    width: 60px;
+    height: 100vh;
+    /* background: #003147; */
+    background-color: #4C7264;
+    transition: 0.5s;
+    overflow:hidden;
+    z-index:1000;
+}
+.navigation-side.active{
+    width: 250px;
+}
+.navigation-side ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding:0;
+}
+.navigation-side ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+.navigation-side ul li:hover{
+    background: #97C4B5;
+}
+.navigation-side ul li:nth-child(1){
+    margin-bottom: 20px;
+}
+.navigation-side ul li:nth-child(1):hover{
+    background:transparent;
+}
+.navigation-side ul li form button{
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: none;
+}
+.navigation-side ul li form button span.icon{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 25px;
+}
+.navigation-side ul li form button span.tittle{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+/* .navigation-side ul li a .icon, */
+.navigation-side ul li a{
+    position: relative;
+    display: flex;
+    align-items:center;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    cursor:pointer;
+}
+.navigation-side ul li a .icon-top,
+.navigation-side ul li a .icon{
+    position: relative;
+    display: flex;
+    justify-content:center;
+    min-width: 60px;
+    height: 60px;
+    align-items:center;
+    /* line-height: 60px; */
+    text-align: center;
+    cursor:pointer;
+    color: #fff;
+    font-size: 24px;
+}
+.navigation-side ul li a:hover,
+.navigation-side ul li a:hover .icon{
+    color:#000;
+    /* font-size:18px; */
+}
+.navigation-side ul li a .tittle h2{
+    color:#fff;
+    font-size:24px;
+    font-weight:900;
+    cursor:auto;
+}
+
+.navigation-side ul li form button{
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: none;
+}
+.navigation-side ul li form button span.icon{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 25px;
+}
+.navigation-side ul li form button span.tittle{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+.navigation-side ul li form button:hover span.tittle,
+.navigation-side ul li form button:hover span.icon{
+    color: #000;
+}
+.navigation-side ul li a .tittle{
+    position: relative;
+    display: flex;
+    align-items:center;
+    padding: 0 10px;
+    height: 60px;
+    font-weight:700;
+    white-space: nowrap ;
+}
+.content .container-setting{
+    grid-area:content;
+    display:grid;
+    grid-template-areas: 'password' 'name' 'delete';
+    grid-template-rows: 1fr 200px 130px;
+    grid-template-columns:1fr;
+    transition: 0.5s;
+}
+.content .container-setting .cover-ganti-password{
+    grid-area: password;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-top:15px;
+}
+.content .container-setting .cover-ganti-nama .bx-nama,
+.content .container-setting .cover-hapus-akun .card,
+.content .container-setting .cover-ganti-password .bx-password{
+    width:50%;
+    background-color:#fff;
+    margin:0;
+    border-radius:10px 10px 0 0;
+    box-shadow:1px 5px 10px rgba(0,0,0, 0.5);
+}
+.content .container-setting .cover-hapus-akun .card{
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 25px;
+    outline: none;
+    border: none;
+}
+.content .container-setting .cover-hapus-akun .card .card-header{
+    background-color: #F8EABB;
+    font-weight: 800;
+    font-size:17px;
+    border-radius: 0;
+}
+.content .container-setting .cover-ganti-nama .bx-nama{
+    border-radius:0;
+}
+.content .container-setting .cover-ganti-nama .bx-nama .bx-head,
+.content .container-setting .cover-ganti-password .bx-password .bx-head{
+    font-size:17px;
+    font-weight:800;
+    text-align:center;
+    background-color:#97C4B5;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 10px;
+}
+.content .container-setting .cover-ganti-nama .bx-nama .bx-head{
+    border-radius: 0;
+}
+.content .container-setting .cover-ganti-nama .bx-nama .bx-body,
+.content .container-setting .cover-ganti-password .bx-password .bx-body{
+    display:flex;
+    width:100%;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.content .container-setting .cover-ganti-nama .bx-nama .bx-body .bx-input,
+.content .container-setting .cover-ganti-password .bx-password .bx-body .bx-input{
+    width:90%
+}
+
+.content .container-setting .cover-ganti-nama .bx-nama .bx-body::before,
+.content .container-setting .cover-ganti-password .bx-password .bx-body::before{
+    content:none;
+}
+.content .container-setting .cover-ganti-nama .bx-nama .bx-body label,
+.content .container-setting .cover-ganti-password .bx-password .bx-body label{
+    font-weight:700;
+}
+.content .container-setting .cover-ganti-nama .bx-nama .bx-body input,
+.content .container-setting .cover-ganti-password .bx-password .bx-body input{
+    box-shadow: none;
+    border: 1px solid #4C7264;
+}
+.content .container-setting .cover-ganti-nama .bx-nama .bx-body input:focus,
+.content .container-setting .cover-ganti-password .bx-password .bx-body input:focus{
+    box-shadow: none;
+    outline: 2px solid #4C7264;
+    outline-offset: 2px;
+}
+.content .container-setting .cover-ganti-nama .bx-nama .card-footer,
+.content .container-setting .cover-ganti-password .bx-password .card-footer{
+    margin-left:30px;
+    margin-bottom: 15px;
+}
+.content .container-setting .cover-ganti-nama .bx-nama .card-footer button,
+.content .container-setting .cover-ganti-password .bx-password .card-footer button{
+    background-color: #4C7264;
+    border: 1px solid #F8EABB;
+    width: 200px;
+}
+.content .container-setting .cover-ganti-nama .bx-nama .card-footer button:active,
+.content .container-setting .cover-ganti-password .bx-password .card-footer button:active{
+    background-color: #4C7264;
+    border: 1px solid #F8EABB;
+    color:#F8EABB;
+    width: 200px;
+}
+
+
+
+
+.content .container-setting .cover-ganti-nama{
+    grid-area:name;
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+.content .container-setting .cover-hapus-akun{
+    grid-area:delete;
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+
+.alert{
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    top: 0;
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+.modal .modal-dialog .modal-content .modal-header{
+    background-color: #F8EABB;
+}
+.modal .modal-dialog .modal-content .modal-header h1{
+    font-weight: 800;
+}
+.modal .modal-dialog .modal-content .modal-body label{
+    font-weight: 600;
+}
+.modal .modal-dialog .modal-content .modal-body input{
+    box-shadow: none;
+    outline:none;
+    border: 1px solid #4C7264;
+}
+.modal .modal-dialog .modal-content .modal-body input:focus{
+    outline: 2px solid #4C7264;
+    outline-offset: 2px;
+    border:1px solid #4C7264;
+}
